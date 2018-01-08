@@ -2,6 +2,7 @@ import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import foxutil.Prime;
 import org.apache.commons.lang.StringUtils;
 import scala.collection.mutable.HashTable;
 
@@ -14,13 +15,35 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+enum T{
+    PLUS("+"){double apply(double a, double b){return a + b;}};
+
+    private String symbol;
+
+    T(String symbol) {
+        this.symbol = symbol;
+    }
+
+    abstract double apply(double a, double b);
+
+    @Override
+    public String toString() {
+        return symbol;
+    }
+
+    private static final Map map = new HashMap();
+
+    static {
+        System.out.println("static block");
+    }
+}
+
 public class Test {
     public static void main(String[] args) throws IOException, IllegalAccessException, ParseException {
 //        SInterface stu = new Student("asdb");
 //        ProxyFactory p = new ProxyFactory();
 //        stu = (SInterface) p.createStudentProxy(stu);
 //        stu.print();
-
 
 
 
