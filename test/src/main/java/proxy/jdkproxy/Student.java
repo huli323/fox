@@ -1,4 +1,4 @@
-package jdkproxy;
+package proxy.jdkproxy;
 
 public class Student implements SInterface {
     private String name;
@@ -23,5 +23,10 @@ public class Student implements SInterface {
     public String getName() {
 
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "toString";
     }
 }
