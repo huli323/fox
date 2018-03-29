@@ -3,16 +3,13 @@ import java.util.Random;
 public class Test {
     private static boolean stopRequested;
     public static void main(String[] args) throws InterruptedException {
-        Random random = new Random(5);
-        System.out.println(random.nextInt(10));
-        System.out.println(random.nextInt(10));
-        System.out.println(random.nextInt(10));
-        System.out.println(random.nextInt(10));
+
 
     }
 
 
 }
+
 //
 //class A implements Runnable {
 //    private String name;
