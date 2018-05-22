@@ -1,94 +1,72 @@
-import java.util.Random;
+import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.config.ConnectionConfig;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.math.BigDecimal;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+import java.security.MessageDigest;
+import java.util.*;
 
 public class Test {
-    private static boolean stopRequested;
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
 
+//        String urlStr = "ftp://root:ifox94323@ftp.foxme.vip/usr/local/test";
+//        URL url = new URL(urlStr);
+//        URLConnection connection = url.openConnection();
+//        connection.connect();
+//        System.out.println(connection.getContentLength());
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+//        System.out.println(reader.readLine());
+
+//        String str = "123456374180507010189";
+//        MessageDigest md5 = MessageDigest.getInstance("MD5");
+//        md5.update(str.getBytes("GBK"));
+//        System.out.println(byte2HexStr(md5.digest()));
+
+
+
+//        CloseableHttpClient client = HttpClients.custom().setDefaultConnectionConfig(ConnectionConfig.DEFAULT).build();
+//        HttpPost post = new HttpPost("http://www.foxme1.vip");
+//        post.setHeader("Content-Type", "application/xml;charset=gbk");
+//
+//        HttpResponse response = client.execute(post);
+//        String message = EntityUtils.toString(response.getEntity(), "GBK");
+//        System.out.println(message);
+
+
+        try{
+            System.out.println("try clause");
+            int a = 1;
+            if(a == 1)
+                throw new Exception("eee");
+        } catch (Exception e){
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("end");
 
     }
 
+    public static String byte2HexStr(byte buf[]) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < buf.length; i++) {
+            String hex = Integer.toHexString(buf[i] & 0xFF);
+            if (hex.length() == 1) {
+                hex = '0' + hex;
+            }
+            sb.append(hex.toLowerCase());
+        }
+        return sb.toString();
+    }
 
 }
-
-//
-//class A implements Runnable {
-//    private String name;
-//
-//    public A(String name){
-//        this.name = name;
-//    }
-//
-//    @Override
-//    public void run() {
-//        Thread.currentThread().setName(name);
-//        throw new RuntimeException();
-//    }
-//}
-//
-//class MyThreadFactory implements ThreadFactory {
-//    @Override
-//    public Thread newThread(Runnable r) {
-//        Thread t = new Thread(r);
-//        System.out.println("created a threadtest: " + t.getName());
-//        t.setUncaughtExceptionHandler(new MyExceptionHandler());
-//        return t;
-//    }
-//}
-//
-//class MyExceptionHandler implements Thread.UncaughtExceptionHandler {
-//    @Override
-//    public void uncaughtException(Thread t, Throwable e) {
-//        System.out.println(t.getName() + " catched exception: " + e);
-//    }
-//}
-//
-//
-//class LinkedStack<T> {
-//    private Node<T> node = new Node();
-//
-//    private class Node<U> {
-//        U val;
-//        Node<U> next;
-//
-//        Node() {
-//        }
-//
-//        Node(U val, Node<U> next) {
-//            this.val = val;
-//            this.next = next;
-//        }
-//
-//        boolean isEnd() {
-//            return val == null && next == null;
-//        }
-//
-//        @Override
-//        public String toString() {
-//            return next + "->" + val;
-//        }
-//    }
-//
-//    public void push(T t) {
-//        if (node.isEnd()) {
-//            node.val = t;
-//        } else {
-//            node = new Node(t, node);
-//        }
-//    }
-//
-//    public T pop() {
-//        T t = node.val;
-//        return t == null ? null : t;
-//    }
-//
-//    public boolean isEmpty() {
-//        return node.isEnd();
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return node.toString();
-//    }
-//}
-//
-//

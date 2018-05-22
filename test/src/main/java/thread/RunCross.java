@@ -1,4 +1,4 @@
-package threadtest;
+package thread;
 
 import java.util.HashMap;
 

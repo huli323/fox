@@ -2,7 +2,7 @@ package xmlannotation;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -22,13 +22,13 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @XmlAttribute 将元素映射为XML节点的属性，可通过name指定属性别名
  * */
 
-@XmlRootElement
+@XmlRootElement(name = "classA")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ClassA {
-//    @XmlElement(name="Name")
+    @XmlElement(name="Name")
     private String name;
 
-//    @XmlElement(name="Age")
+    @XmlElement(name="Age")
     private int age;
 
     public String gender;
@@ -59,5 +59,14 @@ public class ClassA {
         this.name = name;
         this.age = age;
         this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "ClassA{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                '}';
     }
 }
