@@ -22,7 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @XmlAttribute 将元素映射为XML节点的属性，可通过name指定属性别名
  * */
 
-@XmlRootElement(name = "classA")
+//@XmlRootElement(name = "classA")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ClassA {
     @XmlElement(name="Name")
@@ -31,10 +31,9 @@ public class ClassA {
     @XmlElement(name="Age")
     private int age;
 
+    @XmlElement(name="Gender")
     public String gender;
 
-//    @XmlElement(name="defaultName")
-//    @XmlTransient
     public String getName() {
         return name;
     }
@@ -43,16 +42,23 @@ public class ClassA {
         this.name = name;
     }
 
-    public ClassA() {
-    }
-
-//    @XmlTransient
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public ClassA() {
     }
 
     public ClassA(String name, int age, String gender) {

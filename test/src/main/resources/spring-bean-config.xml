@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean class="beantest.Person" id="person" scope="singleton"
+        p:age="20"
+        p:name="fox"
+        >
+        <lookup-method bean="spouse" name="getSpouse" />
+    </bean>
+
+    <bean id="spouse" class="beantest.Spouse" scope="prototype" p:name="yan" p:age="20" />
+
+    <aop:aspectj-autoproxy />
+    <bean id="test" class="aspectj.Test" />
+    <bean class="aspectj.AspectJService" />
+</beans>

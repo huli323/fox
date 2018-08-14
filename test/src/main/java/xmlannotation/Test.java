@@ -12,15 +12,21 @@ import java.util.List;
 
 public class Test {
     public static void main(String[] args) {
-        ClassA classA = new ClassA("huli", 23, "男");
+        ClassA classA = new ClassA();
+        classA.setAge(11);
+        classA.setName("fox");
         ClassA classB = new ClassA("ff", 2, "女");
         List<ClassA> cs = new ArrayList<>();
         cs.add(classA);
         cs.add(classB);
+
+        Body body = new Body();
+        body.setName("哈哈哈");
+
         RootClass rootClass = new RootClass();
-        rootClass.setClassA(cs);
+        rootClass.setBody(body);
         try {
-            System.out.println(objToXml(rootClass, "UTF-8"));
+            System.out.println(objToXml(rootClass, "utf-8"));
         } catch (JAXBException e) {
             e.printStackTrace();
         }
@@ -28,16 +34,9 @@ public class Test {
 
         String xml = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n" +
                 "<root>\n" +
-                "    <childs>\n" +
-                "        <Name>huli</Name>\n" +
-                "        <Age>23</Age>\n" +
-                "        <a>男</a>\n" +
-                "    </childs>\n" +
-                "    <child>\n" +
-                "        <Name>ff</Name>\n" +
-                "        <Age>2</Age>\n" +
-                "        <gender>女</gender>\n" +
-                "    </child>\n" +
+                "    <requestBody>\n" +
+                "        <height>175.0</height>\n" +
+                "    </requestBody>\n" +
                 "</root>";
         RootClass root = new RootClass();
         try {

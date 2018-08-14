@@ -6,7 +6,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class Zip {
-  /*  public static void main(String[] args) {
+    public static void main(String[] args) {
         try {
             long start = System.currentTimeMillis();
             zipCompress(new File("D:\\IT电子书"), "C:/Users/Administrator/Desktop/aa.zip");
@@ -14,7 +14,7 @@ public class Zip {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     /**
      *
