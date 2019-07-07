@@ -1,10 +1,15 @@
-public class Test {
-    public static volatile int a = 0;
+import com.google.common.collect.Maps;
 
-    public static void main(String[] args) throws Throwable {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class Test {
+
+    public static void main(String[] args) {
+
 
 
     }
-
-
 }

@@ -17,8 +17,7 @@ public class Test {
 
         Query query = manager.createQuery("select UPPER(e.ename) from Employee e");
         List<String> list = query.getResultList();
-        for (String str :
-                list) {
+        for (String str : list) {
             System.out.println(str);
         }
     }
