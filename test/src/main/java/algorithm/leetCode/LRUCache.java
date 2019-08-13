@@ -1,4 +1,4 @@
-package leetCode;
+package algorithm.leetCode;
 
 import java.util.*;
 

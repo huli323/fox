@@ -1,4 +1,4 @@
-package leetCode;
+package algorithm.leetCode;
 
 /**
  * 给定一个整型数组，其中只有一个数字只出现一次，其余的出现偶数次，找出这个数字
