@@ -5,7 +5,4 @@
 
     <bean id="test" class="aspectj.Test" />
     <bean id="before" class="aspectj.MyService" />
-    <bean id="target" class="org.springframework.aop.framework.ProxyFactoryBean"
-          p:target-ref="test"
-          p:interceptorNames="before" />
 </beans>

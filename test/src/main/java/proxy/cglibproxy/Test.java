@@ -1,14 +1,10 @@
 package proxy.cglibproxy;
 
-import net.sf.cglib.proxy.Enhancer;
-
 public class Test {
     public static void main(String[] args) {
-        Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(Student.class);
-        enhancer.setCallback(new MyMethodInterceptor());
+        CGLibProxy cgLibProxy = new CGLibProxy();
 
-        Student student = (Student) enhancer.create();
+        Student student = (Student) cgLibProxy.newProxy(new Student());
         student.say("hello world");
         System.out.println(student);
     }

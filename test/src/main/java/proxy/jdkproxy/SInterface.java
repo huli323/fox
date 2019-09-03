@@ -1,5 +1,5 @@
 package proxy.jdkproxy;
 
 public interface SInterface {
-    void print();
+    void print(String name);
 }
