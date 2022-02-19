@@ -14,8 +14,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <version>8</version>
-                    <target>8</target>
+                    <version>11</version>
+                    <target>11</target>
                 </configuration>
             </plugin></plugins>
     </build>
